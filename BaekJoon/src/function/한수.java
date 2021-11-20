@@ -16,9 +16,9 @@ public class 한수 {
 	}
 
 	public static int hansu(int num) {
-		int cnt = 0; //한수의 개수
+		int cnt = 0; // 한수의 개수
 
-		if (num <= 99) { //100보다 작을 경우 리턴하면 반복문 x
+		if (num <= 99) { // 100보다 작을 경우 리턴하면 반복문 x
 			return num;
 		} else {
 			cnt = 99;
@@ -27,9 +27,9 @@ public class 한수 {
 			}
 
 			for (int i = 100; i <= num; i++) {
-				int hun = i / 100; //백의자리
-				int ten = (i / 10) % 10; //십의자리
-				int one = i % 10; //일의자리
+				int hun = i / 100; // 백의자리
+				int ten = (i / 10) % 10; // 십의자리
+				int one = i % 10; // 일의자리
 
 				if ((hun - ten) == (ten - one)) {
 					cnt++;
