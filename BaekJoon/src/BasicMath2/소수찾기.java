@@ -17,7 +17,7 @@ public class 소수찾기 {
 
 		StringTokenizer st = new StringTokenizer(br.readLine(), " ");
 
-		while (st.hasMoreTokens()) {
+		while (st.hasMoreTokens()) { //true를 반환하면 토큰이 존재 
 			boolean value = true;
 
 			int num = Integer.parseInt(st.nextToken());

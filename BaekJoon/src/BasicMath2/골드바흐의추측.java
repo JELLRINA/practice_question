@@ -4,33 +4,33 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class °ñµå¹ÙÈåÀÇÃßÃø {
+public class ê³¨ë“œë°”íì˜ì¶”ì¸¡ {
 
 	public static boolean[] prime = new boolean[10001];
 
 	public static void main(String[] args) throws IOException {
-		// ¼Ò¼ö ÀÀ¿ë ¹®Á¦ 2
+		// ì†Œìˆ˜ ì‘ìš© ë¬¸ì œ 2
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringBuilder sb = new StringBuilder();
 
 		get_prime();
 
-		int T = Integer.parseInt(br.readLine()); // ÁÖ¾îÁö´Â Å×½ºÆ®ÄÉÀÌ½º °³¼ö
+		int T = Integer.parseInt(br.readLine()); // ì£¼ì–´ì§€ëŠ” í…ŒìŠ¤íŠ¸ì¼€ì´ìŠ¤ ê°œìˆ˜
 
-		// µÎ '¼Ò¼ö'ÀÇ Â÷ÀÌ°¡ °¡Àå ÀÛÀº °ÍÀ» Ãâ·ÂÇÑ´Ù.
+		// ë‘ 'ì†Œìˆ˜'ì˜ ì°¨ì´ê°€ ê°€ì¥ ì‘ì€ ê²ƒì„ ì¶œë ¥í•œë‹¤.
 		while (T-- > 0) {
-			int n = Integer.parseInt(br.readLine()); // Â¦¼ö n
-			int first = n / 2; //p¿Íq´Â ¼Ò¼ö
+			int n = Integer.parseInt(br.readLine()); // ì§ìˆ˜ n
+			int first = n / 2; //pì™€qëŠ” ì†Œìˆ˜
 			int second = n / 2;
 			
 			while (true) {
-				//µÎ ¼ö°¡ ¼Ò¼öÀÏ °æ¿ì¿¡¸¸ Ãâ·Â
+				//ë‘ ìˆ˜ê°€ ì†Œìˆ˜ì¼ ê²½ìš°ì—ë§Œ ì¶œë ¥
 				if(!prime[first] && !prime[second]) {
-					//°ø¹éÀ¸·Î ±¸ºĞÇÑ´Ù.
+					//ê³µë°±ìœ¼ë¡œ êµ¬ë¶„í•œë‹¤.
 					sb.append(first).append(' ').append(second).append('\n');
 					break;
 				}
-				//Ãâ·ÂÇÏ´Â ¼Ò¼ö´Â ÀÛÀº °ÍºÎÅÍ ¸ÕÀú Ãâ·ÂÇÏ¸ç,(°¨¼Ò Áõ°¡°ª ÇØÁÖ°í ¹İº¹.)
+				//ì¶œë ¥í•˜ëŠ” ì†Œìˆ˜ëŠ” ì‘ì€ ê²ƒë¶€í„° ë¨¼ì € ì¶œë ¥í•˜ë©°,(ê°ì†Œ ì¦ê°€ê°’ í•´ì£¼ê³  ë°˜ë³µ.)
 				first--;
 				second++;
 			}
@@ -40,7 +40,7 @@ public class °ñµå¹ÙÈåÀÇÃßÃø {
 	}
 
 	private static void get_prime() {
-		// 0,1Àº ¼Ò¼ö°¡ ¾Æ´Ï´Ù
+		// 0,1ì€ ì†Œìˆ˜ê°€ ì•„ë‹ˆë‹¤
 		prime[0] = prime[1] = true;
 
 		for (int i = 2; i <= Math.sqrt(prime.length); i++) {
