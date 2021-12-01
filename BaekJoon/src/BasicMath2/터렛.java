@@ -36,17 +36,16 @@ public class 터렛 {
 
 		int distance_pow = (int) (Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2)); // 제곱근을 이용해서 두 원 사이의 거리
 
-		// r1,r2(반지름)이 있을 수 있는 위치의 개수가 무한대일 경우에는 -1을 출력
-		if (x1 == x2 && y1 == y2 && r1 == r2) {
+		
+		if (x1 == x2 && y1 == y2 && r1 == r2) { //두원의 중심 거리와 반지름차의 절대값이 0인경우(무한대)
 			return -1;
-		} else if (distance_pow > Math.pow(r1 + r2, 2)) {
+			//접점이 0 인 경우,
+		} else if (distance_pow > Math.pow(r1 + r2, 2) || distance_pow < Math.pow(r1 - r2, 2)) {
 			return 0;
-		} else if (distance_pow < Math.pow(r1 - r2, 2)) {
-			return 0;
-		} else if (distance_pow == Math.pow(r1 - r2, 2)) {
+			//접점이 1 인 경우,
+		} else if (distance_pow == Math.pow(r1 - r2, 2) || distance_pow == Math.pow(r1 + r2, 2)) {
 			return 1;
-		} else if (distance_pow == Math.pow(r1 + r2, 2)) {
-			return 1;
+			//r1-r2 < distance_pow < r1+r2
 		} else {
 			return 2;
 		}
