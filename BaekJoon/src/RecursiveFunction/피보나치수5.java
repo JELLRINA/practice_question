@@ -15,7 +15,7 @@ public class 피보나치수5 {
 		int[] fibonacci = new int[N + 1];
 
 		for (int i = 0; i < fibonacci.length; i++) {
-			// 0 과 1 일 경우 각각 초기화
+			// 피보나치 수는 0과 1로 시작한다. 
 			if (i == 0)
 				fibonacci[0] = 0;
 			else if (i == 1)
